@@ -25,7 +25,6 @@ setInterval(function() {
 swarm.listen()
 swarm.join(key)
 swarm.on('connection', function (connection) {
-  console.log(connection)
   connection.pipe(log.replicate()).pipe(connection)
 })
 
