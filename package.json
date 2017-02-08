@@ -1,0 +1,26 @@
+{
+  "name": "hyperchat-protocol",
+  "version": "1.0.0",
+  "description": "A p2p chat protocol based on hypercore",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asbjornenge/hyperchat-protocol.git"
+  },
+  "keywords": [
+    "chat",
+    "p2p",
+    "hypercore"
+  ],
+  "author": "Knowit Stavanger",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/asbjornenge/hyperchat-protocol/issues"
+  },
+  "homepage": "https://github.com/asbjornenge/hyperchat-protocol#readme"
+}
