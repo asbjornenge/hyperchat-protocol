@@ -10,15 +10,16 @@ var key = crypto.createHmac('sha256', 'hyperchat')
 
 var changesStream = log.createReadStream({live:true})
 
+let link = null;
 changesStream.on('data', function(node) {
+  link = [node.key]
   console.log('change:', node.value.toString())
 })
 
-let link = null;
 setInterval(function() {
   log.add(link, 'elo', function(err, node) {
     if (err) throw new Error(err)
-    link = node.key
+    link = [node.key]
   })
 },1000)
 
