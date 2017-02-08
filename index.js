@@ -47,6 +47,7 @@ process.stdin.on('keypress', function (ch, key) {
       msg = msg.slice(0, -1)
       process.stdout.clearLine()
       process.stdout.cursorTo(0)
+      process.stdout.write(msg)
       break
     default:
       msg += ch
