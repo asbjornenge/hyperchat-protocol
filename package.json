@@ -4,7 +4,9 @@
   "description": "A p2p chat protocol based on hypercore",
   "main": "index.js",
   "dependencies": {
-    "hypercore": "^4.19.3"
+    "discovery-swarm": "^4.2.0",
+    "hypercore": "^4.19.3",
+    "memdb": "^1.3.1"
   },
   "devDependencies": {},
   "scripts": {
