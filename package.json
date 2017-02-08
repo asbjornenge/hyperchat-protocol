@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "A p2p chat protocol based on hypercore",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "hypercore": "^4.19.3"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
