@@ -1,17 +1,32 @@
 var swarm = require('discovery-swarm')()
-var hypercore = require('hypercore')
+var hyperlog = require('hyperlog')
 var crypto = require('crypto')
-var net = require('net')
+var memdb = require('memdb')
+var log = hyperlog(memdb())
 
-var key = crypto.createHmac('sha256', 'asdasdasdasd')
+var key = crypto.createHmac('sha256', 'hyperchat')
                    .update('yolo')
                    .digest('hex');
+
+var changesStream = log.createReadStream({live:true})
+
+changesStream.on('data', function(node) {
+  console.log('change:', node.value.toString())
+})
+
+let link = null;
+setInterval(function() {
+  log.add(link, 'elo', function(err, node) {
+    if (err) throw new Error(err)
+    link = node.key
+  })
+},1000)
 
 swarm.listen()
 swarm.join(key)
 swarm.on('connection', function (connection) {
   console.log(connection)
-//  connection.pipe(archive.replicate()).pipe(connection)
+  connection.pipe(log.replicate()).pipe(connection)
 })
 
 //var core = hypercore(require('memdb')()) // db is a leveldb instance
