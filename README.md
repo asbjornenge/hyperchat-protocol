@@ -1,3 +1,3 @@
 # hyperchat-protocol
 
-YOLO!
+A p2p chat protocol based on [hypercore](https://github.com/mafintosh/hypercore).
